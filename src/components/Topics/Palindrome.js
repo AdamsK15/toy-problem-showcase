@@ -15,7 +15,17 @@ class Palindrome extends Component {
     }
 
     isPalindrome(userInput) {
+        let forward = userInput;
+        let backward = userInput;
+        backward = backward.split('');
+        backward = backward.reverse();
+        backward = backward.join('');
 
+        if (forward === backward) {
+            this.setState({ palindrome: 'true' });
+        } else {
+            this.setState({ palindrome: 'false' })
+        }
     }
 
 
